@@ -80,4 +80,33 @@ echo $condicao1 || $condicao2 ? "verdadeiro <br>" : "falso <br>";
 # NÃO lógico (NOT)
 echo "Não lógico (NOT) para a segunda condição: ";
 echo !$condicao2 ? "verdadeiro <br>" : "falso <br>";
+
+// Operações com Booleanos
+# Operação com AND
+$tem_idade = true;
+$tem_cartao = false;
+
+$pode_entrar = $tem_idade && $tem_cartao;
+echo "Pode entrar na festa: " . ($pode_entrar ? "Sim" : "Não") . "<br>";
+
+# Operação com OR
+$tem_passaporte = true;
+$tem_visto = false;
+
+$pode_viajar = $tem_passaporte || $tem_visto;
+echo "Pode viajar para o exterior: " . ($pode_viajar? "Sim" : "Não") . "<br>";
+
+// Números Decimais (floats)
+$altura = 1.82;
+$peso = 79.5;
+
+echo "A altura é : $altura metros <br>";
+echo "O peso é: $peso kg <br>";
+
+// Operações com floats
+$preco_produto = 19.99;
+$quantidade = 3;
+
+$total_carrinho = $preco_produto * $quantidade;
+echo "Total da compra: R$ $total_carrinho <br>";
 ?>
