@@ -56,4 +56,15 @@ foreach($alunos as $nome => $idade) {
     echo $nome . " tem " . $idade . " anos. ";
 }
 echo "<hr>";
+
+// Funções úteis  para Arrays
+echo "Número de elementos no array de frutas é: " . count($frutas) . "<br>";
+echo "Índice da fruta 'Laranja': " . array_search("Laranja", $frutas) . "<br>";
+echo "Última fruta do array: " . end($frutas) . "<br>";
+echo "Array de frutas original: ";
+print_r($frutas);
+echo "<br>";
+echo "Array de frutas depois de reverter";
+$frutas_revertidas = array_reverse($frutas);
+print_r($frutas_revertidas);
 ?>
