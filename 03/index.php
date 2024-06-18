@@ -32,4 +32,28 @@ $alunos["Maria"] = 21;
 $alunos["Ana"] = 21;
 print_r($alunos);
 
+// Adicionando elementos em um Array
+$frutas[] = "Abacaxi";
+$numeros[] = 93;
+$alunos["José"] = 25;
+
+echo "<hr>";
+
+// Percorrendo um array com foreach
+echo "Lista de Frutas: ";
+foreach($frutas as $fruta) {
+    echo $fruta . " ";
+}
+echo "<br>";
+
+foreach($numeros as $numero) {
+    // Escreva a lista de números
+    echo $numero . " ";
+}
+echo "<br>";
+
+foreach($alunos as $nome => $idade) {
+    echo $nome . " tem " . $idade . " anos. ";
+}
+echo "<hr>";
 ?>
