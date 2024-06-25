@@ -11,10 +11,26 @@ $numero = 5; //Número fornecido pelo usuário.
 echo "Contagem Regressiva <br>";
 
 // Solução com for
+for($i = $numero; $i >= 0; $i--) {
+    echo "Faltam $i segundos <br>";
+}
+echo "<br>";
 
 // Solução com while
+$i = $numero;
+while($i >= 0) {
+    echo "Faltam $i segundos <br>";
+    $i--;
+}
+echo "<br>";
 
 // Solução com do-while
+$i = $numero;
+do {
+    echo "Faltam $i segundos <br>";
+    $i--;
+} while ($i >= 0);
+echo "<br>";
 
 // Desafio 2: Tabuada
 /*
