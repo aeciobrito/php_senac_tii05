@@ -37,22 +37,55 @@ echo "<br>";
     Crie um programa que exiba a tabuada de multiplicação de um número fornecido pelo usuário.
     A tabuada deve ser exibida de 1 até 10.
 */
-
+echo "<hr>";
 $tabuada_numero = 8;
 
 // Solução com o FOR
+for($i = 1; $i <= 10; $i++) {
+    $resultado = $tabuada_numero * $i;
+    echo "$tabuada_numero X $i = $resultado <br>";
+}
+echo "<br>";
 
 // Solução com while
+$i = 1;
+while($i <= 10) {
+    $resultado = $tabuada_numero * $i;
+    echo "$tabuada_numero X $i = $resultado <br>";
+    $i++;
+}
+echo "<br>";
 
 // Desafio 3: Sequência Fibonacci
 /*
     A sequência de Fibonacci é uma sequência de números inteiros em que cada termo é a soma dos dois anteriores.
     Crie um programa que solicite ao usuário um número N e exiba os N primeiros termos da sequência de Fibonacci.
 */
+echo "<hr>";
 
+$anterior = 0;
+$atual = 1;
+$termos = 20;
+
+echo "$anterior $atual ";
 // Solução com for
+// for($i = 2; $i <= $termos; $i++) {
+//     $proximo = $anterior + $atual;
+//     echo "$proximo ";
+//     $anterior = $atual;
+//     $atual = $proximo;
+// }
 
 // Solução com while
+$i = 2;
+while($i <= $termos) {
+    $proximo = $anterior + $atual;
+    echo "$proximo ";
+    $anterior = $atual;
+    $atual = $proximo;
+    $i++;
+}
+echo "<br>";
 
 //// DESAFIOS LÓGICOS - ESTRUTURAS DE REPETIÇÃO
 
@@ -60,10 +93,16 @@ $tabuada_numero = 8;
 /*
     Solicita três números inteiros ao usuário (A, B e C) e verifica se a soma de A e B é igual a C.
 */
+echo "<hr>";
 $A = 5;
 $B = 10;
 $C = 15;
 
+if($A + $B == $C) {
+    echo "A soma de A e B é giual a C <br>";
+} else {
+    echo "A soma de A e B é diferente de C <br>";
+}
 // Atividade 2: Calcular o quadrado de um número
 /*
     Solicita ao usuário um número inteiro e calcula o quadrado desse número.
@@ -105,7 +144,7 @@ $horas_string = "01:30";
 
 // Implementação de Conversão de Horas em Minutos
 
-echo "O equivalente total em minutos de $horas_string é: XX <br>";
+//////echo "O equivalente total em minutos de $horas_string é: XX <br>";
 
 /// Atividade 7: Desenho de Pirâmide
 /*
