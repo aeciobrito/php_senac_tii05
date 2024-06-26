@@ -103,13 +103,17 @@ if($A + $B == $C) {
 } else {
     echo "A soma de A e B é diferente de C <br>";
 }
+echo "<br>";
+
 // Atividade 2: Calcular o quadrado de um número
 /*
     Solicita ao usuário um número inteiro e calcula o quadrado desse número.
 */
 $numero = 8;
 // Implementação do Cálculo do Quadrado
+$quadrado = $numero * $numero;
 
+echo "O quadrado de $numero é $quadrado <br>";
 
 // Atividade 3: Verificar se um número é par ou ímpar
 /*
@@ -117,6 +121,11 @@ $numero = 8;
 */
 $numero = 14;
 // Implementação da Verificação de Paridade
+if($numero % 2 == 0) {
+    echo "$numero é um número par <br>";
+} else {
+    echo "$numero é um número ímpar <br>";
+}
 
 // Atividade 4: Calcular a média de três números
 /*
@@ -127,7 +136,8 @@ $numero2 = 15;
 $numero3 = 20;
 
 // Implementação do Cálculo da Média
-
+$media = ($numero1 + $numero2 + $numero3) / 3;
+echo "A média entre $numero1 + $numero2 + $numero3 é: $media <br>";
 // Atividade 5: Verificar se um número é múltiplo de outro
 /*
     Solicita ao usuário dois números e verifica se o primeiro é múltiplo do segundo.
@@ -135,6 +145,11 @@ $numero3 = 20;
 $numeroMultiplo = 15;
 $multiploDe = 5;
 // Implementação da Verificação de Múltiplo
+if($numeroMultiplo % $multiploDe == 0) {
+    echo "$numeroMultiplo é múltiplo de $multiploDe <br>";
+} else {
+    echo "$numeroMultiplo não é múltiplo de $multiploDe <br>";
+}
 
 //// Atividade 6: Conversão de Horas em Minutos
 /*
@@ -143,8 +158,10 @@ $multiploDe = 5;
 $horas_string = "01:30";
 
 // Implementação de Conversão de Horas em Minutos
+$horas = explode(":", $horas_string);
+$total_minutos = $horas[0] * 60 + $horas[1];
 
-//////echo "O equivalente total em minutos de $horas_string é: XX <br>";
+echo "O equivalente total em minutos de $horas_string é: $total_minutos <br>";
 
 /// Atividade 7: Desenho de Pirâmide
 /*
@@ -152,6 +169,12 @@ $horas_string = "01:30";
 */
 $altura_piramide = 5;
 // Implementação de Desenho de Pirâmide
+for($i = 1; $i <= $altura_piramide; $i++) {
+    for($j = 1; $j <= $i; $j++) {
+        echo "*";
+    }
+    echo "<br>";
+}
 
 //// Atividade 8: Contagem de Dígitos em um Número
 /*
@@ -159,6 +182,7 @@ $altura_piramide = 5;
 */
 $numeroDigitos = 2048;
 // Implementação de Contagem de Dígitos em um Número
+echo "A quantidade de dígitos do número $numeroDigitos é : " . strlen($numeroDigitos) . "<br>";
 
 //// Atividade 9: Verificação de Palíndromo
 /*
@@ -167,6 +191,13 @@ $numeroDigitos = 2048;
 $palavra = "abbabba";
 
 // Implementação de Verificação de Palíndromo
+$contrario_dela = strrev($palavra);
+
+if($palavra == $contrario_dela) {
+    echo "A plavra $palavra é um palíndromo <br>";
+} else {
+    echo "A plavra $palavra não é um palíndromo <br>";
+}
 
 //// Atividade 10: Ordenação de Números
 /*
@@ -184,5 +215,9 @@ $numero3 = 7;
 */
 $numeroSoma = 599;
 // Implementação de Soma de Dígitos
+$numeros_array = str_split($numeroSoma);
+$somaDigitos = array_sum($numeros_array);
+
+echo "A soma dos dígitos de $numeroSoma é: $somaDigitos";
 
 ?>
