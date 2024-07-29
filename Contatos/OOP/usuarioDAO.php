@@ -7,7 +7,8 @@ class UsuarioDAO {
     private $bancoDeDados;
 
     public function __construct() {
-        $this->bancoDeDados = new Database()->getConexao();
+        $banco = new Database();
+        $this->bancoDeDados = $banco->getConexao();
     }
 
     public function getContatos() {

@@ -21,6 +21,5 @@ class Usuario {
     public function separaNome() {
         
     }
-
 }
 ?>
