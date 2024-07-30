@@ -7,13 +7,12 @@ $password = 'Senha@123';
 try {
     $pdo = new PDO($dsn, $user, $password);
 
-    $sql = "INSERT INTO itens_compra (nome_produto, quantidade) 
-            VALUES (:nome_produto, :quantidade)";
+    $sql = "DELETE FROM itens_compra WHERE id = :id";
     
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['nome_produto' => 'Abacaxi', 'quantidade' => 15]);
+    $stmt->execute(['id' => 2]);
 
-    echo "Item inserido com sucesso!";
+    echo "Item removido com sucesso!";
 } catch (PDOException $e) {
     echo 'Falha na conexão: ' . $e->getMessage();
 }
