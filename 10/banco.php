@@ -4,7 +4,6 @@
 function connect() {
     try {    
         $pdo = new PDO('mysql:host=localhost;dbname=lista_compras', 'root', '');
-
         return $pdo;
     } catch (PDOException $e) {
         echo 'Falha na conexao: ' . $e->getMessage();
@@ -33,8 +32,22 @@ function addItem($nome_produto, $quantidade) {
 
 // Função para atualizar um tem (Update)
 function updateItem($id, $comprado) {
-    // Implemente a lógica do update
-    // utilizando de referencia a aula 09
+    $pdo = connect();
+
+    $sql = "UPDATE itens_compra SET comprado=:x WHERE id=:y";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['x' => $comprado, 'y' => $id]);    
+}
+
+// Função para atualizar um tem (Update)
+function updateQuantidadeItem($id, $quantidade) {
+    $pdo = connect();
+
+    $sql = "UPDATE itens_compra SET quantidade=:quantidade WHERE id=:id";
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['quantidade' => $quantidade, 'id' => $id]);
 }
 
 // Função para excluir um item (Delete)
