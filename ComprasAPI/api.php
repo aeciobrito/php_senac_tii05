@@ -1,18 +1,21 @@
 <?php
 
 require_once 'DatabaseRepository.php';
-$database = new DatabaseRepository();
 
 $acao = $_GET['acao'];
 
 if($acao == 'listar') {
-    echo $database->getAllItems();
+    echo json_encode(DatabaseRepository::getAllItems());
 } else if($acao == 'adicionar') {
-    echo $database->addItem();
+    $data = json_decode(file_get_contents('php://input'), true);
+    echo DatabaseRepository::addItem($data['nome_produto'], $data['quantidade']);
 } else if($acao == 'atualizar') {
-    echo $database->updateItem();
+    $id = $_GET['id'];
+    $data = json_decode(file_get_contents('php://input'), true);    
+    echo DatabaseRepository::updateItem($id, $data['nome_produto'], $data['quantidade'], $data['comprado']);    
 }  else if($acao == 'deletar') {
-    echo $database->deleteItem();
+    $id = $_GET['id'];
+    echo DatabaseRepository::deleteItem($id);    
 } else {
     echo "Ação não implementada";
 }
