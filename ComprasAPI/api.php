@@ -10,15 +10,16 @@ switch ($acao) {
         break;
     case 'add':
         $data = json_decode(file_get_contents('php://input'), true);
-        DatabaseRepository::addItem($data['nome_produto'], $data['quantidade']);
+        echo DatabaseRepository::addItem($data['nome_produto'], $data['quantidade']);
         break;
     case 'update':
         $id = $_GET['id'];
         $data = json_decode(file_get_contents('php://input'), true);
+        echo DatabaseRepository::updateItem($id, $data['nome_produto'], $data['quantidade'], $data['comprado']);
         break;
     case 'delte':
         $id = $_GET['id'];
-        DatabaseRepository::deleteItem($id); 
+        echo DatabaseRepository::deleteItem($id); 
         break;
     default:
         echo json_encode(['error' => 'Acao Invalida']);
