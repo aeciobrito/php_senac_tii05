@@ -11,14 +11,31 @@
     <ul id="contacts-list"></ul>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function(){
-            // FUnção para buscar os contatos do servidor
-            function fetchContatcts() {
+         document.addEventListener('DOMContentLoaded', function() {
+            const contactsList = document.getElementById('contacts-list');
+
+            // Função para buscar os contatos do servidor
+            function fetchContacts() {
                 return fetch('api.php?action=list')
                     .then(response => response.json())
                     .catch(error => console.error('Erro ao buscar contatos:', error));
+            }            
+
+            // Função para listar os contatos
+            function listContacts() {
+                fetchContacts().then(contacts => {
+                    contactsList.innerHTML = '';
+                    contacts.forEach(contact => {
+                        const li = document.createElement('li');
+                        li.textContent = `Nome: ${contact.nome}, Telefone: ${contact.telefone}, Email: ${contact.email}`;
+                        contactsList.appendChild(li);
+                    });
+                });
             }
-        })
+
+            // Listar os contatos ao carregar a página
+            listContacts();
+        });
     </script>
 </body>
 </html>
