@@ -16,6 +16,9 @@ switch($action) {
         $success = DatabaseRepository::insertContact($data->nome, $data->telefone, $data->email);
         echo json_encode(['success' => $success]);
         break;
+    case 'delete':
+        echo json_encode("Removeu X");
+        break;
     default:
         echo json_encode(['error' => 'Acao invalida']);
 }
