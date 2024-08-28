@@ -30,7 +30,9 @@
             .then(response => response.json())
             .then(data => {
                 if(data.scucess) {
-                    document.getElementById('message').innerText = data;
+                    document.getElementById('message').innerText = data.scucess ? data.scucess : "Funfou!";
+                } else {
+                    document.getElementById('message').innerText = "deu ruim";
                 }
             })
         });        
