@@ -29,8 +29,9 @@ $contacts = DatabaseRepository::getAllContacts();
                     <td><?= $contact['telefone']; ?></td>
                     <td><?= $contact['email']; ?></td>
                     <td>
-                        <a href="#">Editar</a>
-                        <a href="#">Deletar</a>
+                        <a href="edit_contact.php?id=<?= $contact['id']; ?>">Editar</a>
+                        <a href="delete_contact.php?id=<?= $contact['id']; ?>" 
+                            onclick="return confirm('Tem certeza que deseja deletar este contato?');">Deletar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
